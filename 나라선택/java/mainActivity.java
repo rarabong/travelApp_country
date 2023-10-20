@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 public class mainActivity extends AppCompatActivity {
 
-    static final int listCount = 9;
     ListView listView;
 
     @Override
