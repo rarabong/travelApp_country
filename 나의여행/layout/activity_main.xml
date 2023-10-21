@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E2EDF3"
+    android:orientation="vertical"
+    tools:context=".TravelScheduleActivity">
+    <include layout="@layout/toolbar_sc"></include>
+
+    <LinearLayout
+        android:layout_width="380dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+
+        android:backgroundTint="#9FB8CC"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/infoDest"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/shadow"
+            android:gravity="center"
+            android:text="TextView"
+            android:textSize="25dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/startDate"
+                android:layout_width="80dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/solid_date"
+                android:gravity="center"
+                android:text="TextView" />
+
+            <TextView
+                android:id="@+id/endDate"
+                android:layout_width="80dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/solid_date"
+                android:gravity="center"
+                android:text="TextView" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="360dp"
+            android:layout_height="385dp"
+            android:layout_gravity="center"
+            android:background="@color/white">
+
+
+            <android.widget.Button
+                android:id="@+id/box1"
+                android:layout_width="380dp"
+                android:layout_height="170dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/shadow"
+                android:backgroundTint="#9BB3C6"
+                android:text="여행 일정"
+                android:textColor="@color/white"
+                android:drawableTop="@drawable/plan"
+                android:paddingTop="32dp"/>
+
+
+            <android.widget.Button
+                android:id="@+id/box2"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_toStartOf="@+id/box3"
+                android:layout_toLeftOf="@+id/box3"
+                android:background="@drawable/shadow"
+                android:backgroundTint="#9BB3C6"
+                android:text="체크리스트"
+                android:textColor="@color/white"
+                android:drawableTop="@drawable/chack"
+                android:paddingTop="45dp"
+                />
+
+            <android.widget.Button
+                android:id="@+id/box3"
+                android:layout_width="170dp"
+                android:layout_height="170dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/shadow"
+                android:backgroundTint="#9BB3C6"
+                android:text="환율정보"
+                android:textColor="@color/white"
+                android:drawableTop="@drawable/chart"
+                android:paddingTop="45dp"/>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>
