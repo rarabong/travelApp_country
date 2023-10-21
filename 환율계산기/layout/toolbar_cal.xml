@@ -14,8 +14,8 @@
 
         <ImageView
             android:id="@+id/back_btn"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
             android:layout_alignParentBottom="true"
@@ -38,7 +38,7 @@
             android:textStyle="bold"
             android:textColor="@android:color/white"
             android:textSize="20sp"
-            android:text="환율차트" />
+            android:text="환율계산기" />
 
     </RelativeLayout>
 </androidx.appcompat.widget.Toolbar>
