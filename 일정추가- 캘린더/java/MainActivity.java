@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
-public class CreateTravelActivity extends AppCompatActivity {
+public class MainActivity extends extends AppCompatActivity {
     private EditText destinationEditText;
     private EditText startDateEditText;
     private EditText endDateEditText;
@@ -18,41 +18,30 @@ public class CreateTravelActivity extends AppCompatActivity {
     private int year, month, day;
 
     private Button createButton;
-    private TravelDataSource dataSource;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        dataSource = new TravelDataSource(this);
-        dataSource.open();
-
+        // EditText와 Button 초기화
         destinationEditText = findViewById(R.id.cityEditText);
         startDateEditText = findViewById(R.id.startDateEditText);
         endDateEditText = findViewById(R.id.endDateEditText);
         createButton = findViewById(R.id.createButton);
 
+        // 'Create' 버튼 클릭 시 이벤트 처리
         createButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // 여행지, 시작일, 종료일 텍스트 가져오기
                 String destination = destinationEditText.getText().toString();
                 String startDate = startDateEditText.getText().toString();
                 String endDate = endDateEditText.getText().toString();
-
-                long result = dataSource.createTravelInfo(destination, startDate, endDate);
-
-                if (result != -1) {
-                    // 데이터베이스에 저장 성공
-                    Toast.makeText(CreateTravelActivity.this, "여행 정보가 저장되었습니다.", Toast.LENGTH_SHORT).show();
-                } else {
-                    // 저장 실패
-                    Toast.makeText(CreateTravelActivity.this, "여행 정보 저장 실패", Toast.LENGTH_SHORT).show();
-                }
             }
         });
 
-        // EditText 위젯 가져오기
+        // 시작일과 종료일을 위한 EditText 초기화
         startDateEditText = findViewById(R.id.startDateEditText);
         endDateEditText = findViewById(R.id.endDateEditText);
 
@@ -62,7 +51,7 @@ public class CreateTravelActivity extends AppCompatActivity {
         month = calendar.get(Calendar.MONTH);
         day = calendar.get(Calendar.DAY_OF_MONTH);
 
-        // startDateEditText 클릭 시 DatePickerDialog 표시
+        // 시작일 EditText 클릭 시 DatePickerDialog 표시
         startDateEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -70,17 +59,16 @@ public class CreateTravelActivity extends AppCompatActivity {
             }
         });
 
-        // endDateEditText 클릭 시 DatePickerDialog 표시
+        // 종료일 EditText 클릭 시 DatePickerDialog 표시
         endDateEditText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDatePickerDialog(endDateEditText);
             }
         });
-
-        
     }
 
+    // DatePickerDialog를 표시하는 메서드
     private void showDatePickerDialog(final EditText editText) {
         DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener() {
             @Override
@@ -92,11 +80,5 @@ public class CreateTravelActivity extends AppCompatActivity {
         }, year, month, day);
 
         datePickerDialog.show();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        dataSource.close();
     }
 }
