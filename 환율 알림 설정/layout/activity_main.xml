@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/brown"
+        android:orientation="vertical">
+
+        <include android:id="@+id/include" layout="@layout/toolbar"></include>
+
+        <LinearLayout
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/shadow_btn"
+            android:backgroundTint="@color/brown_black"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="20dp"
+                    android:text="환율 알림"
+                    android:textColor="@color/white"
+                    android:textSize="17sp" />
+
+                <androidx.appcompat.widget.SwitchCompat
+                    android:id="@+id/sw_onoff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="150dp"
+                    android:layout_marginTop="4dp"
+                    android:thumb="@drawable/thumb"
+                    app:track="@drawable/track" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/shadow_btn"
+            android:backgroundTint="@color/brown_black"
+            android:orientation="vertical"
+            android:paddingTop="8dp">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:text="KRW 100원당 "
+                android:textColor="@color/white" />
+
+            <Spinner
+                android:id="@+id/spinner"
+                android:layout_width="80dp"
+                android:layout_height="45dp"
+                android:layout_marginLeft="20dp"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toStartOf="@+id/et_from"
+                app:layout_constraintHorizontal_bias="0.666"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:background="@drawable/solid_txt" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/amount_Edt"
+                    android:layout_width="160dp"
+                    android:layout_height="55dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="right"
+                    android:padding="15dp"
+                    android:background="@drawable/solid_txt" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="20dp"
+                    android:text="원 이하일 때 알림 받기"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
